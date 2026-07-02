@@ -6,11 +6,21 @@ export default function LanguageToggle() {
 
   return (
     <div className="language-toggle">
-      <button type="button" className={lang === "en" ? "active" : ""} onClick={() => setLang("en")}>
+      <button
+        type="button"
+        className={lang === "en" ? "active" : ""}
+        aria-pressed={lang === "en"}
+        onClick={() => setLang("en")}
+      >
         EN
       </button>
       <span>/</span>
-      <button type="button" className={lang === "el" ? "active" : ""} onClick={() => setLang("el")}>
+      <button
+        type="button"
+        className={lang === "el" ? "active" : ""}
+        aria-pressed={lang === "el"}
+        onClick={() => setLang("el")}
+      >
         EL
       </button>
     </div>
