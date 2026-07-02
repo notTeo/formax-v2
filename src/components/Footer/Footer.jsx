@@ -21,7 +21,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-column">
-        <nav className="footer-links">
+        <nav className="footer-links" aria-label={t("footer_nav_aria_label")}>
           {links.map((link) => (
             <Link key={link.to} to={link.to}>
               {t(link.key)}
