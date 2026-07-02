@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
 import { useLanguage } from "./context/LanguageContext";
 
 function RoutePlaceholder({ title }) {
@@ -9,10 +10,13 @@ export default function App() {
   const { t } = useLanguage();
 
   return (
-    <main>
-      <Routes>
-        <Route path="/" element={<RoutePlaceholder title={t("hero_headline")} />} />
-      </Routes>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<RoutePlaceholder title={t("hero_headline")} />} />
+        </Routes>
+      </main>
+    </>
   );
 }
