@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer-bottom {
+  width: 100%;
+}

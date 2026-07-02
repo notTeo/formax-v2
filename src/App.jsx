@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import { useLanguage } from "./context/LanguageContext";
 
 function RoutePlaceholder({ title }) {
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/" element={<RoutePlaceholder title={t("hero_headline")} />} />
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }
