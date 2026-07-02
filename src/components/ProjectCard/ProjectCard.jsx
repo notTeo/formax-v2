@@ -7,7 +7,9 @@ export default function ProjectCard({ slug, title, category, status, coverImage 
 
   return (
     <Link to={`/projects/${slug}`} className="project-card">
-      <div className="project-card-image">{/* PLACEHOLDER IMAGE: {coverImage} */}</div>
+      <div className="project-card-image" data-cover-image={coverImage}>
+        {/* PLACEHOLDER IMAGE */}
+      </div>
       <div className="project-card-body">
         <h3>{title}</h3>
         <p>{category}</p>
