@@ -1,21 +1,15 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import { useLanguage } from "./context/LanguageContext";
-
-function RoutePlaceholder({ title }) {
-  return <div>{title}</div>;
-}
+import Home from "./pages/Home/Home";
 
 export default function App() {
-  const { t } = useLanguage();
-
   return (
     <>
       <Navbar />
       <main>
         <Routes>
-          <Route path="/" element={<RoutePlaceholder title={t("hero_headline")} />} />
+          <Route path="/" element={<Home />} />
         </Routes>
       </main>
       <Footer />
