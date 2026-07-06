@@ -10,7 +10,9 @@ export default function CertificationsStrip() {
       <h2>{t("about_certifications_heading")}</h2>
       <div className="certifications-strip-items">
         {placeholderLogos.map((id) => (
-          <div className="certifications-strip-logo" key={id} />
+          <div className="certifications-strip-logo" key={id}>
+            {/* PLACEHOLDER: certification logo */}
+          </div>
         ))}
       </div>
     </section>
