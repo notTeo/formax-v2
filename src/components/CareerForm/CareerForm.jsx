@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { positions } from "../../data/positions";
 import "./CareerForm.css";
@@ -16,6 +16,7 @@ export default function CareerForm() {
   const [cvFile, setCvFile] = useState(null);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle");
+  const cvInputRef = useRef(null);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -58,6 +59,7 @@ export default function CareerForm() {
         setStatus("success");
         setFormData(initialState);
         setCvFile(null);
+        if (cvInputRef.current) cvInputRef.current.value = "";
       } else {
         setStatus("error");
       }
@@ -107,7 +109,14 @@ export default function CareerForm() {
       />
 
       <label htmlFor="cv">{t("form_cv_label")}</label>
-      <input id="cv" name="cv" type="file" accept=".pdf,.doc,.docx" onChange={handleFileChange} />
+      <input
+        id="cv"
+        name="cv"
+        type="file"
+        accept=".pdf,.doc,.docx"
+        ref={cvInputRef}
+        onChange={handleFileChange}
+      />
 
       <button type="submit" disabled={status === "loading"}>
         {status === "loading" ? t("form_submitting") : t("form_submit")}
