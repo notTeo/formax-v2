@@ -10,7 +10,7 @@ export const config = {
 
 function parseForm(req) {
   return new Promise((resolve, reject) => {
-    const form = new IncomingForm({ multiples: false });
+    const form = new IncomingForm();
     form.parse(req, (err, fields, files) => {
       if (err) reject(err);
       else resolve({ fields, files });
@@ -58,6 +58,7 @@ export default async function handler(req, res) {
 
     res.status(200).json({ success: true });
   } catch (error) {
-    res.status(500).json({ success: false, error: error.message });
+    console.error("send-career error:", error);
+    res.status(500).json({ success: false, error: "Failed to send application" });
   }
 }
