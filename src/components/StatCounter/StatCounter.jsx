@@ -10,6 +10,8 @@ export default function StatCounter({ value, label, suffix }) {
     const node = ref.current;
     if (!node) return undefined;
 
+    let rafId = null;
+
     function animateCount() {
       const duration = 1500;
       const start = performance.now();
@@ -20,13 +22,13 @@ export default function StatCounter({ value, label, suffix }) {
         setCount(Math.floor(progress * value));
 
         if (progress < 1) {
-          requestAnimationFrame(step);
+          rafId = requestAnimationFrame(step);
         } else {
           setCount(value);
         }
       }
 
-      requestAnimationFrame(step);
+      rafId = requestAnimationFrame(step);
     }
 
     const observer = new IntersectionObserver(
@@ -44,7 +46,10 @@ export default function StatCounter({ value, label, suffix }) {
 
     observer.observe(node);
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, [value]);
 
   return (
