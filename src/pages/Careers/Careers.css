@@ -1,0 +1,19 @@
+.page-careers {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.positions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.positions-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}

@@ -1,0 +1,9 @@
+.career-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-message {
+  margin: 0;
+}
