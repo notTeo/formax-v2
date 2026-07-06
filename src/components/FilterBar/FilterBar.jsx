@@ -8,6 +8,7 @@ export default function FilterBar({ categories, activeFilter, onFilterChange }) 
           key={category.value}
           type="button"
           className={activeFilter === category.value ? "active" : ""}
+          aria-pressed={activeFilter === category.value}
           onClick={() => onFilterChange(category.value)}
         >
           {category.label}
