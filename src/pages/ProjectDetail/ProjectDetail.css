@@ -1,0 +1,17 @@
+.page-project-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-detail-meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem 1rem;
+}
+
+.project-detail-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
