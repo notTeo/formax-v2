@@ -1,0 +1,15 @@
+.page-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contact-map {
+  aspect-ratio: 16 / 9;
+}
