@@ -10,12 +10,11 @@ import photo5 from "../../assets/photos/nick-wessaert-JI01fn0U7Cg-unsplash.jpg";
 import "./FeaturedProjects.css";
 
 const galleryImages = [
-  { src: photo1, rowSpan: 12 },
-  { src: photo2, rowSpan: 8 },
-  { src: photo4, rowSpan: 14 },
-  { src: photo3, rowSpan: 10 },
-  { src: photo5, rowSpan: 8 },
-  { src: photo1, rowSpan: 9 },
+  { src: photo1, size: "lg", position: "top-left" },
+  { src: photo2, size: "md", position: "top-right" },
+  { src: photo3, size: "md", position: "bottom-left" },
+  { src: photo4, size: "lg", position: "bottom-right" },
+  { src: photo5, size: "sm", position: "mid-right" },
 ];
 
 export default function FeaturedProjects() {
@@ -23,7 +22,19 @@ export default function FeaturedProjects() {
 
   return (
     <section className="project-gallery">
-      <div className="project-gallery-grid">
+      <div className="project-gallery-orbit">
+        {galleryImages.map((image, index) => (
+          <Reveal
+            key={`${image.src}-${index}`}
+            className={`project-gallery-item project-gallery-item--${image.position} project-gallery-item--${image.size}`}
+            delay={index * 60}
+          >
+            <div className="project-gallery-item-float">
+              <img src={image.src} alt={t("gallery_heading")} loading="lazy" />
+            </div>
+          </Reveal>
+        ))}
+
         <Reveal className="project-gallery-text">
           <h2>{t("gallery_heading")}</h2>
           <p>{t("gallery_subheading")}</p>
@@ -40,17 +51,6 @@ export default function FeaturedProjects() {
             </svg>
           </Link>
         </Reveal>
-
-        {galleryImages.map((image, index) => (
-          <Reveal
-            key={`${image.src}-${index}`}
-            className="project-gallery-item"
-            delay={index * 60}
-            style={{ gridRowEnd: `span ${image.rowSpan}` }}
-          >
-            <img src={image.src} alt={t("gallery_heading")} loading="lazy" />
-          </Reveal>
-        ))}
       </div>
     </section>
   );

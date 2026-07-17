@@ -33,7 +33,24 @@ export default function ServiceTeaser() {
             <div className="service-teaser-card-image">
               <img src={sector.photo} alt={t(sector.key)} loading="lazy" />
             </div>
-            <h3>{t(sector.key)}</h3>
+            <div className="service-teaser-card-overlay">
+              <h3>{t(sector.key)}</h3>
+              <svg
+                className="service-teaser-card-arrow"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3.5 8h9M8 3.5 12.5 8 8 12.5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
           </Reveal>
         ))}
       </div>

@@ -96,14 +96,26 @@
   color: var(--color-text-muted);
 }
 
+.footer-utilities {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  width: 100%;
+  margin-top: var(--space-md);
+}
+
 @media (max-width: 768px) {
   .footer {
     padding: var(--space-xl) var(--page-padding) var(--space-md);
   }
 
   .footer-top {
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl) var(--space-lg);
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
   }
 
   .footer-bottom {

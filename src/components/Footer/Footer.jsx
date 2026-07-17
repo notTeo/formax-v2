@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import LanguageToggle from "../LanguageToggle/LanguageToggle";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import fullLogo from "../../assets/FORMAX-combined.svg";
 import "./Footer.css";
 
@@ -52,7 +53,11 @@ export default function Footer() {
         <p>
           &copy; {new Date().getFullYear()} FORMAX. {t("footer_rights")}
         </p>
+      </div>
+
+      <div className="footer-utilities">
         <LanguageToggle />
+        <ThemeToggle />
       </div>
     </footer>
   );

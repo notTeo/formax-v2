@@ -29,8 +29,8 @@ export default function Home() {
         />
       </section>
 
-      <ServiceTeaser />
       <FeaturedProjects />
+      <ServiceTeaser />
       <CTABanner />
     </div>
   );
