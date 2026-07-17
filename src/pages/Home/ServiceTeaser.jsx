@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import Reveal from "../../components/Reveal/Reveal";
+import healthcarePhoto from "../../assets/categories/healthcare.jpg";
+import officePhoto from "../../assets/categories/office.jpg";
+import retailPhoto from "../../assets/categories/retail.jpg";
+import residentialPhoto from "../../assets/categories/residential.jpg";
+import hospitalityPhoto from "../../assets/categories/hospitality.jpg";
 
 const sectors = [
-  { id: "healthcare", key: "sector_healthcare", category: "Healthcare" },
-  { id: "offices", key: "sector_offices", category: "Offices" },
-  { id: "retail", key: "sector_retail", category: "Retail" },
-  { id: "residential", key: "sector_residential", category: "Residential" },
+  { id: "healthcare", key: "sector_healthcare", category: "Healthcare", photo: healthcarePhoto },
+  { id: "offices", key: "sector_offices", category: "Offices", photo: officePhoto },
+  { id: "retail", key: "sector_retail", category: "Retail", photo: retailPhoto },
+  { id: "residential", key: "sector_residential", category: "Residential", photo: residentialPhoto },
+  { id: "hospitality", key: "sector_hospitality", category: "Hospitality", photo: hospitalityPhoto },
 ];
 
 export default function ServiceTeaser() {
@@ -24,7 +30,9 @@ export default function ServiceTeaser() {
             delay={index * 80}
             key={sector.id}
           >
-            <div className="service-teaser-card-image">{/* PLACEHOLDER: sector photo */}</div>
+            <div className="service-teaser-card-image">
+              <img src={sector.photo} alt={t(sector.key)} loading="lazy" />
+            </div>
             <h3>{t(sector.key)}</h3>
           </Reveal>
         ))}

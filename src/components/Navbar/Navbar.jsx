@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
-import LanguageToggle from "../LanguageToggle/LanguageToggle";
 import { useLanguage } from "../../context/LanguageContext";
 import { stripAccents } from "../../utils/text";
 import wordmark from "../../assets/FORMAX-letters-only.svg";
@@ -77,16 +76,12 @@ export default function Navbar() {
             {stripAccents(t(contactLink.key))}
           </NavLink>
         </div>
-        <div className="navbar-mobile-lang">
-          <LanguageToggle />
-        </div>
         <div className="navbar-mobile-logo">
           <img src={wordmark} alt="FORMAX" />
         </div>
       </nav>
 
       <div className="navbar-right">
-        <LanguageToggle />
         <Link to={contactLink.to} className="btn-primary navbar-contact-btn">
           {stripAccents(t(contactLink.key))}
         </Link>

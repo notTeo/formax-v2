@@ -89,10 +89,6 @@
   display: none;
 }
 
-.navbar-mobile-lang {
-  display: none;
-}
-
 .navbar-mobile-logo {
   display: none;
 }
@@ -227,17 +223,12 @@
     display: inline-flex;
   }
 
-  .navbar-mobile-lang {
-    display: flex;
-    width: 100%;
-    padding-top: var(--space-lg);
-    border-top: 1px solid var(--color-border);
-  }
-
   .navbar-mobile-logo {
     display: block;
     width: 100%;
     margin-top: var(--space-lg);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
   }
 
   .navbar-mobile-logo img {
