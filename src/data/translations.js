@@ -22,6 +22,10 @@ export const translations = {
     sector_residential: "Residential",
     sector_hospitality: "Hospitality",
     section_featured_projects_heading: "Featured Projects",
+    gallery_heading: "Many Successful Projects",
+    gallery_subheading:
+      "A closer look at the work behind our numbers — completed, in progress, and everywhere in between.",
+    gallery_show_all: "Show All",
     cta_heading: "Ready to start your next project?",
     cta_subheading: "Get in touch with our team today.",
     cta_button: "Contact Us",
@@ -90,6 +94,10 @@ export const translations = {
     sector_residential: "Κατοικίες",
     sector_hospitality: "Φιλοξενία",
     section_featured_projects_heading: "Επιλεγμένα Έργα",
+    gallery_heading: "Πολλά Επιτυχημένα Έργα",
+    gallery_subheading:
+      "Μια πιο κοντινή ματιά στη δουλειά πίσω από τους αριθμούς μας — ολοκληρωμένη, σε εξέλιξη, και ό,τι ενδιάμεσα.",
+    gallery_show_all: "Δείτε Όλα",
     cta_heading: "Έτοιμοι να ξεκινήσετε το επόμενο έργο σας;",
     cta_subheading: "Επικοινωνήστε με την ομάδα μας σήμερα.",
     cta_button: "Επικοινωνήστε μαζί μας",

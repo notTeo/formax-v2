@@ -73,6 +73,12 @@
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .hero-image {
+    aspect-ratio: 4 / 5;
+  }
+}
+
 .hero-image-slide {
   position: absolute;
   inset: 0;

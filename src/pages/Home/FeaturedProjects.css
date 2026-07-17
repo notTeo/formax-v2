@@ -1,0 +1,125 @@
+.project-gallery {
+  padding-block: var(--space-xl);
+}
+
+.project-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 20px;
+  grid-auto-flow: dense;
+  gap: var(--space-md);
+}
+
+.project-gallery-item {
+  grid-column: span 1;
+  overflow: hidden;
+  border-radius: 2px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-gallery-item:hover {
+  transform: translateY(-6px);
+}
+
+.project-gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.project-gallery-text {
+  grid-column: 2 / 3;
+  grid-row: 7 / 19;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  text-align: center;
+  padding: var(--space-lg);
+}
+
+.project-gallery-text h2 {
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  line-height: 1.15;
+  max-width: 320px;
+}
+
+.project-gallery-text p {
+  max-width: 280px;
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+}
+
+.project-gallery-show-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid var(--color-text);
+  border-radius: var(--radius-pill);
+  color: var(--color-text);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-gallery-show-all svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-gallery-show-all:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+  transform: scale(1.05);
+}
+
+.project-gallery-show-all:hover svg {
+  transform: translateX(2px);
+}
+
+.project-gallery-show-all:active {
+  border-color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .project-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 16px;
+    gap: var(--space-sm);
+  }
+
+  .project-gallery-text {
+    grid-column: 1 / -1;
+    grid-row: 13 / 26;
+    padding: var(--space-md);
+  }
+
+  .project-gallery-text h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    max-width: 280px;
+  }
+
+  .project-gallery-text p {
+    max-width: 260px;
+    font-size: var(--fs-body-sm);
+  }
+
+  .project-gallery-item:hover {
+    transform: none;
+  }
+}
