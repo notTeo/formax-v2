@@ -89,7 +89,7 @@
   display: none;
 }
 
-.navbar-mobile-logo {
+.navbar-mobile-utilities {
   display: none;
 }
 
@@ -224,18 +224,25 @@
     display: inline-flex;
   }
 
-  .navbar-mobile-logo {
-    display: block;
+  .navbar-mobile-utilities {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
     width: 100%;
     margin-top: var(--space-lg);
     padding-top: var(--space-lg);
     border-top: 1px solid var(--color-border);
   }
 
-  .navbar-mobile-logo img {
+  .navbar-mobile-icon {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .navbar-mobile-icon img {
+    width: 28px;
+    height: 28px;
     display: block;
-    width: 100%;
-    height: auto;
   }
 
   .navbar-backdrop {

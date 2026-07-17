@@ -1,15 +1,11 @@
-.language-toggle {
-  display: flex;
+.language-toggle.btn-ghost {
+  display: inline-flex;
   align-items: center;
-  gap: 0.375rem;
-}
-
-.language-toggle > span {
-  color: var(--color-border);
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
   font-size: var(--fs-label);
-}
-
-.language-toggle .btn-ghost {
-  padding: 0.3rem 0.7rem;
-  font-size: var(--fs-label);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wide);
 }
