@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
+import Reveal from "../../components/Reveal/Reveal";
 
 const sectors = [
-  { id: "healthcare", key: "sector_healthcare" },
-  { id: "offices", key: "sector_offices" },
-  { id: "retail", key: "sector_retail" },
-  { id: "residential", key: "sector_residential" },
+  { id: "healthcare", key: "sector_healthcare", category: "Healthcare" },
+  { id: "offices", key: "sector_offices", category: "Offices" },
+  { id: "retail", key: "sector_retail", category: "Retail" },
+  { id: "residential", key: "sector_residential", category: "Residential" },
 ];
 
 export default function ServiceTeaser() {
@@ -12,12 +14,19 @@ export default function ServiceTeaser() {
 
   return (
     <section className="service-teaser">
-      <h2>{t("section_services_heading")}</h2>
+      <Reveal as="h2">{t("section_services_heading")}</Reveal>
       <div className="service-teaser-grid">
-        {sectors.map((sector) => (
-          <div className="service-teaser-card" key={sector.id}>
+        {sectors.map((sector, index) => (
+          <Reveal
+            as={Link}
+            to={`/projects?category=${sector.category}`}
+            className="service-teaser-card"
+            delay={index * 80}
+            key={sector.id}
+          >
+            <div className="service-teaser-card-image">{/* PLACEHOLDER: sector photo */}</div>
             <h3>{t(sector.key)}</h3>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

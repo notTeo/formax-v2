@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding-inline: var(--page-padding);
+  padding-block: var(--space-xl) var(--space-3xl);
 }
 
 .positions-list {
@@ -16,4 +18,16 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  padding-block: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.positions-list-item h3 {
+  font-size: var(--fs-h3);
+}
+
+.positions-list-item p,
+.positions-list-item span {
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-muted);
 }

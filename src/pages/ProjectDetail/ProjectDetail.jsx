@@ -1,6 +1,8 @@
 import { useParams, Navigate } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import { projects } from "../../data/projects";
+import { stripAccents } from "../../utils/text";
+import Reveal from "../../components/Reveal/Reveal";
 import "./ProjectDetail.css";
 
 export default function ProjectDetail() {
@@ -16,24 +18,24 @@ export default function ProjectDetail() {
     <div className="page-project-detail">
       <div className="project-detail-hero">{/* PLACEHOLDER: {project.coverImage} */}</div>
 
-      <h1>{project.title}</h1>
+      <Reveal as="h1">{project.title}</Reveal>
 
       <dl className="project-detail-meta">
-        <dt>{t("project_meta_category")}</dt>
+        <dt>{stripAccents(t("project_meta_category"))}</dt>
         <dd>{project.category}</dd>
 
-        <dt>{t("project_meta_location")}</dt>
+        <dt>{stripAccents(t("project_meta_location"))}</dt>
         <dd>{project.location}</dd>
 
-        <dt>{t("project_meta_area")}</dt>
+        <dt>{stripAccents(t("project_meta_area"))}</dt>
         <dd>{project.area_sqm}</dd>
 
-        <dt>{t("project_meta_status")}</dt>
+        <dt>{stripAccents(t("project_meta_status"))}</dt>
         <dd>
           {project.status === "Completed" ? t("project_status_completed") : t("project_status_inprogress")}
         </dd>
 
-        <dt>{t("project_meta_year")}</dt>
+        <dt>{stripAccents(t("project_meta_year"))}</dt>
         <dd>{project.year}</dd>
       </dl>
 

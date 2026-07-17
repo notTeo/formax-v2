@@ -1,6 +1,7 @@
 import { useLanguage } from "../../context/LanguageContext";
 import { projects } from "../../data/projects";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
+import Reveal from "../../components/Reveal/Reveal";
 
 export default function FeaturedProjects() {
   const { t } = useLanguage();
@@ -8,10 +9,12 @@ export default function FeaturedProjects() {
 
   return (
     <section className="featured-projects">
-      <h2>{t("section_featured_projects_heading")}</h2>
+      <Reveal as="h2">{t("section_featured_projects_heading")}</Reveal>
       <div className="featured-projects-grid">
-        {featured.map((project) => (
-          <ProjectCard key={project.slug} {...project} />
+        {featured.map((project, index) => (
+          <Reveal key={project.slug} delay={index * 80}>
+            <ProjectCard {...project} />
+          </Reveal>
         ))}
       </div>
     </section>

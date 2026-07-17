@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
+import { stripAccents } from "../../utils/text";
 import "./ContactForm.css";
 
 const initialState = {
@@ -58,7 +59,7 @@ export default function ContactForm() {
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
-      <label htmlFor="name">{t("form_name_label")}</label>
+      <label htmlFor="name">{stripAccents(t("form_name_label"))}</label>
       <input
         id="name"
         name="name"
@@ -68,7 +69,7 @@ export default function ContactForm() {
         onChange={handleChange}
       />
 
-      <label htmlFor="email">{t("form_email_label")}</label>
+      <label htmlFor="email">{stripAccents(t("form_email_label"))}</label>
       <input
         id="email"
         name="email"
@@ -78,7 +79,7 @@ export default function ContactForm() {
         onChange={handleChange}
       />
 
-      <label htmlFor="subject">{t("form_subject_label")}</label>
+      <label htmlFor="subject">{stripAccents(t("form_subject_label"))}</label>
       <input
         id="subject"
         name="subject"
@@ -88,7 +89,7 @@ export default function ContactForm() {
         onChange={handleChange}
       />
 
-      <label htmlFor="message">{t("form_message_label")}</label>
+      <label htmlFor="message">{stripAccents(t("form_message_label"))}</label>
       <textarea
         id="message"
         name="message"
@@ -97,7 +98,7 @@ export default function ContactForm() {
         onChange={handleChange}
       />
 
-      <button type="submit" disabled={status === "loading"}>
+      <button type="submit" className="btn-primary" disabled={status === "loading"}>
         {status === "loading" ? t("form_submitting") : t("form_submit")}
       </button>
 

@@ -2,11 +2,31 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding-inline: var(--page-padding);
+  padding-block: var(--space-xl) var(--space-3xl);
 }
 
 .company-story-columns {
   display: flex;
   gap: 1rem;
+}
+
+.company-story-text {
+  flex: 1;
+}
+
+.company-story-image {
+  flex: 1;
+  aspect-ratio: 4 / 3;
+  background: #f2f2f3;
+  border: 1px solid var(--color-border);
+}
+
+.team-grid,
+.values-pillars,
+.certifications-strip {
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
 }
 
 .team-grid-items,
@@ -15,4 +35,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
+}
+
+.team-grid-item,
+.values-pillar,
+.certifications-strip-logo {
+  aspect-ratio: 1 / 1;
+  background: #f2f2f3;
+  border: 1px solid var(--color-border);
 }

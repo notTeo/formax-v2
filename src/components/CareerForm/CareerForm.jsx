@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { positions } from "../../data/positions";
+import { stripAccents } from "../../utils/text";
 import "./CareerForm.css";
 
 const initialState = {
@@ -70,7 +71,7 @@ export default function CareerForm() {
 
   return (
     <form className="career-form" onSubmit={handleSubmit}>
-      <label htmlFor="name">{t("form_name_label")}</label>
+      <label htmlFor="name">{stripAccents(t("form_name_label"))}</label>
       <input
         id="name"
         name="name"
@@ -80,7 +81,7 @@ export default function CareerForm() {
         onChange={handleChange}
       />
 
-      <label htmlFor="email">{t("form_email_label")}</label>
+      <label htmlFor="email">{stripAccents(t("form_email_label"))}</label>
       <input
         id="email"
         name="email"
@@ -90,7 +91,7 @@ export default function CareerForm() {
         onChange={handleChange}
       />
 
-      <label htmlFor="position">{t("form_position_label")}</label>
+      <label htmlFor="position">{stripAccents(t("form_position_label"))}</label>
       <select id="position" name="position" value={formData.position} onChange={handleChange}>
         {positions.map((position) => (
           <option key={position.id} value={position.id}>
@@ -99,7 +100,7 @@ export default function CareerForm() {
         ))}
       </select>
 
-      <label htmlFor="message">{t("form_message_label")}</label>
+      <label htmlFor="message">{stripAccents(t("form_message_label"))}</label>
       <textarea
         id="message"
         name="message"
@@ -108,7 +109,7 @@ export default function CareerForm() {
         onChange={handleChange}
       />
 
-      <label htmlFor="cv">{t("form_cv_label")}</label>
+      <label htmlFor="cv">{stripAccents(t("form_cv_label"))}</label>
       <input
         id="cv"
         name="cv"
@@ -118,7 +119,7 @@ export default function CareerForm() {
         onChange={handleFileChange}
       />
 
-      <button type="submit" disabled={status === "loading"}>
+      <button type="submit" className="btn-primary" disabled={status === "loading"}>
         {status === "loading" ? t("form_submitting") : t("form_submit")}
       </button>
 

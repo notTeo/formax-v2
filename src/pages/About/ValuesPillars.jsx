@@ -1,4 +1,5 @@
 import { useLanguage } from "../../context/LanguageContext";
+import Reveal from "../../components/Reveal/Reveal";
 
 const placeholderPillars = [1, 2, 3];
 
@@ -7,7 +8,7 @@ export default function ValuesPillars() {
 
   return (
     <section className="values-pillars">
-      <h2>{t("about_values_heading")}</h2>
+      <Reveal as="h2">{t("about_values_heading")}</Reveal>
       <div className="values-pillars-items">
         {placeholderPillars.map((id) => (
           <div className="values-pillar" key={id}>

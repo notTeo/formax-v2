@@ -1,7 +1,44 @@
 :root {
-  --color-gold: #c9a84c;
-  --color-black: #0d0d0d;
-  --color-white: #fafafa;
-  --color-mid: #1a1a1a;
-  --color-border: #2a2a2a;
+  --color-bg: #ffffff;
+  --color-text: #0a0a0a;
+  --color-text-muted: #666666;
+  --color-accent: #c9cde8;
+  --color-border: #e5e5e5;
+
+  --font-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 700;
+  --fw-hero: 700;
+
+  --fs-hero: clamp(2.25rem, 1.5rem + 3vw, 3rem);
+  --fs-h1: 2.25rem;
+  --fs-h2: 1.5rem;
+  --fs-h3: 1.125rem;
+  --fs-body: 0.875rem;
+  --fs-body-sm: 0.8125rem;
+  --fs-label: 0.6875rem;
+
+  --ls-tight: -0.02em;
+  --ls-wide: 0.08em;
+
+  --lh-tight: 1.05;
+  --lh-heading: 1.15;
+  --lh-body: 1.6;
+
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --page-padding: clamp(1.25rem, 5vw, 4rem);
+
+  --radius-pill: 999px;
+  --radius-none: 0;
 }

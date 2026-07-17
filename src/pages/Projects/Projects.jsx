@@ -1,13 +1,21 @@
 import { useState, useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import { projects } from "../../data/projects";
 import FilterBar from "../../components/FilterBar/FilterBar";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
+import Reveal from "../../components/Reveal/Reveal";
 import "./Projects.css";
+
+const validCategories = ["Healthcare", "Offices", "Retail", "Residential", "Hospitality"];
 
 export default function Projects() {
   const { t } = useLanguage();
-  const [activeFilter, setActiveFilter] = useState("All");
+  const [searchParams] = useSearchParams();
+  const categoryParam = searchParams.get("category");
+  const [activeFilter, setActiveFilter] = useState(
+    validCategories.includes(categoryParam) ? categoryParam : "All"
+  );
 
   const filterCategories = [
     { value: "All", label: t("filter_all") },
@@ -25,11 +33,13 @@ export default function Projects() {
 
   return (
     <div className="page-projects">
-      <h1>{t("projects_heading")}</h1>
+      <Reveal as="h1">{t("projects_heading")}</Reveal>
       <FilterBar categories={filterCategories} activeFilter={activeFilter} onFilterChange={setActiveFilter} />
       <div className="projects-grid">
-        {filteredProjects.map((project) => (
-          <ProjectCard key={project.slug} {...project} />
+        {filteredProjects.map((project, index) => (
+          <Reveal key={project.slug} delay={index * 60}>
+            <ProjectCard {...project} />
+          </Reveal>
         ))}
       </div>
     </div>

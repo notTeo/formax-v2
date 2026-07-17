@@ -15,25 +15,26 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <div className="footer-column">
-        <img src="/assets/logo.svg" alt="FORMAX" />
-        <p>{t("footer_tagline")}</p>
-      </div>
+      <div className="footer-top">
+        <div className="footer-column">
+          <p>{t("footer_tagline")}</p>
+        </div>
 
-      <div className="footer-column">
-        <nav className="footer-links" aria-label={t("footer_nav_aria_label")}>
-          {links.map((link) => (
-            <Link key={link.to} to={link.to}>
-              {t(link.key)}
-            </Link>
-          ))}
-        </nav>
-      </div>
+        <div className="footer-column">
+          <nav className="footer-links" aria-label={t("footer_nav_aria_label")}>
+            {links.map((link) => (
+              <Link key={link.to} to={link.to}>
+                {t(link.key)}
+              </Link>
+            ))}
+          </nav>
+        </div>
 
-      <div className="footer-column">
-        <p>{t("contact_phone_label")}</p>
-        <p>{t("contact_email_label")}</p>
-        <p>{t("contact_address_label")}</p>
+        <div className="footer-column">
+          <p>{t("contact_phone_label")}</p>
+          <p>{t("contact_email_label")}</p>
+          <p>{t("contact_address_label")}</p>
+        </div>
       </div>
 
       <div className="footer-bottom">

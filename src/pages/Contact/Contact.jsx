@@ -1,5 +1,6 @@
 import { useLanguage } from "../../context/LanguageContext";
 import ContactForm from "../../components/ContactForm/ContactForm";
+import Reveal from "../../components/Reveal/Reveal";
 import "./Contact.css";
 
 export default function Contact() {
@@ -7,10 +8,10 @@ export default function Contact() {
 
   return (
     <div className="page-contact">
-      <h1>{t("contact_heading")}</h1>
+      <Reveal as="h1">{t("contact_heading")}</Reveal>
 
       <section className="contact-info">
-        <h2>{t("contact_info_heading")}</h2>
+        <Reveal as="h2">{t("contact_info_heading")}</Reveal>
         <p>{t("contact_phone_label")}</p>
         <p>{t("contact_email_label")}</p>
         <p>{t("contact_address_label")}</p>
