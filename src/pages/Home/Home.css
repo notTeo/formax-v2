@@ -15,31 +15,43 @@
   border-bottom: 1px solid var(--color-border);
 }
 
+.service-teaser h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  margin-bottom: var(--space-xl);
+}
+
 .service-teaser-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
 }
 
 .service-teaser-card {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 4px;
   text-decoration: none;
-  border: 1px solid var(--color-border);
   transition:
-    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 0.3s ease;
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s ease;
 }
 
 .service-teaser-card:hover {
-  transform: scale(1.03);
-  border-color: var(--color-text);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(10, 10, 10, 0.18);
 }
 
 .service-teaser-card-image {
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: #f2f2f3;
+  position: absolute;
+  inset: 0;
+}
+
+.service-teaser-card-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0) 60%);
 }
 
 .service-teaser-card-image img {
@@ -47,15 +59,44 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .service-teaser-card:hover .service-teaser-card-image img {
-  transform: scale(1.06);
+  transform: scale(1.08);
 }
 
-.service-teaser-card h3 {
+.service-teaser-card-overlay {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
   padding: var(--space-lg);
+}
+
+.service-teaser-card-overlay h3 {
+  color: #fff;
+}
+
+.service-teaser-card-arrow {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: #fff;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-teaser-card:hover .service-teaser-card-arrow {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .cta-banner {
