@@ -63,12 +63,43 @@
 }
 
 .hero-image {
+  position: relative;
   width: calc(100% + 2 * var(--page-padding));
   margin-inline: calc(-1 * var(--page-padding));
   margin-top: var(--space-2xl);
   aspect-ratio: 21 / 9;
   background: #f2f2f3;
   border-radius: var(--radius-none);
+  overflow: hidden;
+}
+
+.hero-image-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: hero-slide-fade 25s infinite;
+  animation-delay: calc(var(--slide-index) * 5s);
+}
+
+@keyframes hero-slide-fade {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  17% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes hero-reveal {

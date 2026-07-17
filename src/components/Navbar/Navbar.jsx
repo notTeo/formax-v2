@@ -12,6 +12,7 @@ const links = [
   { to: "/careers", key: "nav_careers" },
 ];
 
+const homeLink = { to: "/", key: "nav_home" };
 const contactLink = { to: "/contact", key: "nav_contact" };
 
 export default function Navbar() {
@@ -47,12 +48,21 @@ export default function Navbar() {
 
       <nav className={`navbar-links ${isOpen ? "open" : ""}`}>
         <div className="navbar-links-list">
+          <NavLink
+            to={homeLink.to}
+            end
+            className={({ isActive }) => `navbar-home-mobile ${isActive ? "active" : ""}`}
+            style={{ "--link-index": 0 }}
+            onClick={() => setIsOpen(false)}
+          >
+            {stripAccents(t(homeLink.key))}
+          </NavLink>
           {links.map((link, index) => (
             <NavLink
               key={link.to}
               to={link.to}
               className={({ isActive }) => (isActive ? "active" : "")}
-              style={{ "--link-index": index }}
+              style={{ "--link-index": index + 1 }}
               onClick={() => setIsOpen(false)}
             >
               {stripAccents(t(link.key))}
@@ -61,7 +71,7 @@ export default function Navbar() {
           <NavLink
             to={contactLink.to}
             className={({ isActive }) => `navbar-contact-mobile ${isActive ? "active" : ""}`}
-            style={{ "--link-index": links.length }}
+            style={{ "--link-index": links.length + 1 }}
             onClick={() => setIsOpen(false)}
           >
             {stripAccents(t(contactLink.key))}

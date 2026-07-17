@@ -84,7 +84,8 @@
   background: currentColor;
 }
 
-.navbar-links-list a.navbar-contact-mobile {
+.navbar-links-list a.navbar-contact-mobile,
+.navbar-links-list a.navbar-home-mobile {
   display: none;
 }
 
@@ -220,7 +221,8 @@
     transform: translateX(0) scale(1.08);
   }
 
-  .navbar-links-list a.navbar-contact-mobile {
+  .navbar-links-list a.navbar-contact-mobile,
+  .navbar-links-list a.navbar-home-mobile {
     display: inline-flex;
   }
 
