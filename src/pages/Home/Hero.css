@@ -16,7 +16,7 @@
 }
 
 .hero-logo-big {
-  height: clamp(48px, 8vw, 90px);
+  height: clamp(36px, 6vw, 68px);
   width: auto;
   margin-bottom: var(--space-lg);
 }
