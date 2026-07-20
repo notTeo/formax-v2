@@ -12,8 +12,12 @@ export default function Contact() {
 
       <section className="contact-info">
         <Reveal as="h2">{t("contact_info_heading")}</Reveal>
-        <p>{t("contact_phone_label")}</p>
-        <p>{t("contact_email_label")}</p>
+        <p>
+          <a href="tel:+302103628958">{t("contact_phone_label")}</a>
+        </p>
+        <p>
+          <a href="mailto:info@formax.group">{t("contact_email_label")}</a>
+        </p>
         <p>{t("contact_address_label")}</p>
       </section>
 

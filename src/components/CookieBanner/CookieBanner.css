@@ -64,7 +64,7 @@
 }
 
 .cookie-banner-decline {
-  padding: 0.5rem 1.25rem;
+  padding: 10px 20px;
   background: none;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);

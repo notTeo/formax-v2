@@ -8,11 +8,15 @@
 
 .company-story-columns {
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
 .company-story-text {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .company-story-image {
@@ -23,24 +27,66 @@
 }
 
 .team-grid,
-.values-pillars,
 .certifications-strip {
   padding-top: var(--space-xl);
   border-top: 1px solid var(--color-border);
 }
 
+.team-grid h2,
+.certifications-strip h2 {
+  margin-bottom: var(--space-lg);
+}
+
 .team-grid-items,
-.values-pillars-items,
 .certifications-strip-items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
 }
 
-.team-grid-item,
-.values-pillar,
 .certifications-strip-logo {
   aspect-ratio: 1 / 1;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
+}
+
+.team-grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.team-grid-photo {
+  aspect-ratio: 1 / 1;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.team-grid-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-grid-item h3 {
+  font-size: var(--fs-h3);
+  margin: 0;
+}
+
+.team-grid-role {
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.team-grid-phone {
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.team-grid-phone:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
 }

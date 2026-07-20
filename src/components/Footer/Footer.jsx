@@ -39,8 +39,12 @@ export default function Footer() {
         <div className="footer-section">
           <p className="footer-heading">{stripAccents(t("footer_contact_heading"))}</p>
           <div className="footer-contact">
-            <p>{t("contact_phone_label")}</p>
-            <p>{t("contact_email_label")}</p>
+            <p>
+              <a href="tel:+302103628958">{t("contact_phone_label")}</a>
+            </p>
+            <p>
+              <a href="mailto:info@formax.group">{t("contact_email_label")}</a>
+            </p>
             <p>{t("contact_address_label")}</p>
           </div>
           <p className="footer-careers-line">
