@@ -73,7 +73,7 @@
 
 @media (max-width: 768px) {
   .hero-image {
-    aspect-ratio: 12 / 5;
+    aspect-ratio: 48 / 25;
   }
 }
 
