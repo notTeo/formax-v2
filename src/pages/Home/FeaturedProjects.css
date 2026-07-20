@@ -20,7 +20,7 @@
 .project-gallery-img--wide-bottom img {
   display: block;
   width: 100%;
-  height: 280px;
+  height: 420px;
   object-fit: cover;
   border-radius: 12px;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -113,7 +113,7 @@
   }
 
   .project-gallery-img--wide-bottom img {
-    height: 180px;
+    height: 260px;
   }
 
   .project-gallery-img--left img,

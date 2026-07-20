@@ -4,8 +4,8 @@ import { stats } from "../../data/stats";
 import StatCounter from "../../components/StatCounter/StatCounter";
 import HeroCategories from "./HeroCategories";
 import logo from "../../assets/FORMAX-letters-only.svg";
-import heroPhotoLight from "../../assets/photos/hero-light-theme.jpg";
-import heroPhotoDark from "../../assets/photos/hero-dark-theme.jpg";
+import heroPhotoLight from "../../assets/photos/hero/hero-light.jpg";
+import heroPhotoDark from "../../assets/photos/hero/hero-dark.jpg";
 import "./Hero.css";
 
 export default function Hero() {

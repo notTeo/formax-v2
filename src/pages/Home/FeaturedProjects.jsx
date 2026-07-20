@@ -1,21 +1,23 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
+import { useTheme } from "../../context/ThemeContext";
 import { stripAccents } from "../../utils/text";
 import Reveal from "../../components/Reveal/Reveal";
-import photo1 from "../../assets/photos/abbe-sublett-nxZDMUQhN4o-unsplash.jpg";
-import photo2 from "../../assets/photos/kenrick-baksh-Wm8opOd-MDE-unsplash.jpg";
-import photo3 from "../../assets/photos/lei-jiang-csPvbh_E1uc-unsplash.jpg";
-import photo4 from "../../assets/photos/nick-wessaert-JI01fn0U7Cg-unsplash.jpg";
+import photoLeft from "../../assets/photos/gallery/gallery-curved-facade.jpg";
+import photoRight from "../../assets/photos/gallery/gallery-glass-corner.jpg";
+import photoBottomLight from "../../assets/photos/featured-projects/featured-projects-light.jpg";
+import photoBottomDark from "../../assets/photos/featured-projects/featured-projects-dark.jpg";
 import "./FeaturedProjects.css";
 
 export default function FeaturedProjects() {
   const { t } = useLanguage();
+  const { theme } = useTheme();
 
   return (
     <section className="project-gallery">
       <Reveal className="project-gallery-grid">
         <div className="project-gallery-img project-gallery-img--left">
-          <img src={photo2} alt="" />
+          <img src={photoLeft} alt="" />
         </div>
         <div className="project-gallery-text">
           <h2>{t("gallery_heading")}</h2>
@@ -34,10 +36,10 @@ export default function FeaturedProjects() {
           </Link>
         </div>
         <div className="project-gallery-img project-gallery-img--right">
-          <img src={photo3} alt="" />
+          <img src={photoRight} alt="" />
         </div>
         <div className="project-gallery-img project-gallery-img--wide-bottom">
-          <img src={photo4} alt="" />
+          <img key={theme} src={theme === "dark" ? photoBottomDark : photoBottomLight} alt="" />
         </div>
       </Reveal>
     </section>
