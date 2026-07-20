@@ -1,14 +1,33 @@
+import { useState, useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import { projects } from "../../data/projects";
 import { stripAccents } from "../../utils/text";
 import Reveal from "../../components/Reveal/Reveal";
+import Loader from "../../components/Loader/Loader";
 import "./ProjectDetail.css";
+
+const LOADING_DELAY_MS = 1200;
 
 export default function ProjectDetail() {
   const { slug } = useParams();
   const { t } = useLanguage();
   const project = projects.find((item) => item.slug === slug);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const timer = setTimeout(() => setIsLoading(false), LOADING_DELAY_MS);
+    return () => clearTimeout(timer);
+  }, [slug]);
+
+  if (isLoading) {
+    return (
+      <div className="loader-container">
+        <Loader size={56} label={t("project_detail_loading")} />
+      </div>
+    );
+  }
 
   if (!project) {
     return <Navigate to="/projects" replace />;

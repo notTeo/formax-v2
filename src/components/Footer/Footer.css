@@ -96,6 +96,17 @@
   color: var(--color-text-muted);
 }
 
+.footer-privacy-link {
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+}
+
+.footer-privacy-link:hover {
+  color: var(--color-text);
+}
+
 .footer-utilities {
   display: flex;
   align-items: center;
@@ -119,6 +130,9 @@
   }
 
   .footer-bottom {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: var(--space-sm);
     margin-top: var(--space-lg);
     padding-top: var(--space-sm);
   }

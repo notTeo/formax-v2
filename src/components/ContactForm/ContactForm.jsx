@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { stripAccents } from "../../utils/text";
+import Loader from "../Loader/Loader";
 import "./ContactForm.css";
 
 const initialState = {
@@ -99,7 +100,7 @@ export default function ContactForm() {
       />
 
       <button type="submit" className="btn-primary" disabled={status === "loading"}>
-        {status === "loading" ? t("form_submitting") : t("form_submit")}
+        {status === "loading" ? <Loader size={18} label={t("form_submitting")} /> : t("form_submit")}
       </button>
 
       {status === "success" && <p className="form-message success">{t("form_success")}</p>}

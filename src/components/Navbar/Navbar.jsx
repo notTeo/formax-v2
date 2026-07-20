@@ -5,7 +5,7 @@ import { stripAccents } from "../../utils/text";
 import LanguageToggle from "../LanguageToggle/LanguageToggle";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import wordmark from "../../assets/FORMAX-letters-only.svg";
-import iconLogo from "../../assets/FORMAX-icon-only.svg";
+import fullLogo from "../../assets/FORMAX-combined.svg";
 import "./Navbar.css";
 
 const links = [
@@ -80,11 +80,19 @@ export default function Navbar() {
           </NavLink>
         </div>
         <div className="navbar-mobile-utilities">
-          <Link to="/" className="navbar-mobile-icon" onClick={() => setIsOpen(false)}>
-            <img src={iconLogo} alt="FORMAX" />
-          </Link>
           <LanguageToggle />
           <ThemeToggle />
+        </div>
+        <div className="navbar-sidebar-footer">
+          <Link to="/" className="navbar-sidebar-logo" onClick={() => setIsOpen(false)}>
+            <img src={fullLogo} alt="FORMAX" />
+          </Link>
+          <Link to="/privacy-policy" className="navbar-sidebar-privacy" onClick={() => setIsOpen(false)}>
+            {t("footer_privacy_link")}
+          </Link>
+          <p className="navbar-copyright">
+            &copy; {new Date().getFullYear()} FORMAX. {t("footer_rights")}
+          </p>
         </div>
       </nav>
 

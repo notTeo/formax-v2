@@ -34,7 +34,9 @@ export const translations = {
     about_values_heading: "Our Values",
     about_certifications_heading: "Certifications",
     projects_heading: "Projects",
+    projects_loading: "Loading projects",
     filter_all: "All",
+    project_detail_loading: "Loading project",
     project_status_completed: "Completed",
     project_status_inprogress: "In Progress",
     project_meta_category: "Category",
@@ -71,6 +73,35 @@ export const translations = {
     footer_careers_prompt: "Do you want to work for us?",
     footer_careers_cta: "Contact Us",
     footer_rights: "All rights reserved.",
+    footer_privacy_link: "Privacy Policy",
+    privacy_page_title: "Privacy Policy",
+    privacy_last_updated: "Last updated: July 20, 2026",
+    privacy_intro:
+      "FORMAX (\"we\", \"us\", or \"our\") respects your privacy and is committed to protecting the personal information you share with us. This Privacy Policy explains what information we collect, how we use it, and the choices you have regarding your data when you visit our website or contact us about a project.",
+    privacy_section_collect_heading: "Information We Collect",
+    privacy_section_collect_body:
+      "We may collect information you provide directly to us, such as your name, email address, phone number, and any details you include in a contact or career application form. We may also automatically collect certain technical information, including your IP address, browser type, and pages visited, through standard web server logs and cookies.",
+    privacy_section_use_heading: "How We Use Your Information",
+    privacy_section_use_body:
+      "We use the information we collect to respond to your inquiries, evaluate job applications, improve our website and services, and communicate with you about projects or opportunities you have expressed interest in. We do not sell your personal information to third parties.",
+    privacy_section_cookies_heading: "Cookies & Similar Technologies",
+    privacy_section_cookies_body:
+      "Our website may use cookies and similar technologies to remember your preferences, such as your selected language and theme, and to understand how visitors use our site. You can control or disable cookies through your browser settings, though some features of the site may not function properly without them.",
+    privacy_section_sharing_heading: "How We Share Information",
+    privacy_section_sharing_body:
+      "We do not share your personal information with third parties except where necessary to provide our services (for example, with service providers who help us operate our website), to comply with legal obligations, or with your consent.",
+    privacy_section_security_heading: "Data Retention & Security",
+    privacy_section_security_body:
+      "We retain personal information only for as long as necessary to fulfill the purposes described in this policy, or as required by law. We take reasonable technical and organizational measures to protect your information from unauthorized access, loss, or misuse.",
+    privacy_section_rights_heading: "Your Rights",
+    privacy_section_rights_body:
+      "Depending on your location, you may have the right to access, correct, or request deletion of your personal information, or to object to or restrict certain processing. To exercise any of these rights, please contact us using the details below.",
+    privacy_section_changes_heading: "Changes to This Policy",
+    privacy_section_changes_body:
+      "We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We encourage you to review this page periodically for the latest information.",
+    privacy_section_contact_heading: "Contact Us",
+    privacy_section_contact_body:
+      "If you have any questions about this Privacy Policy or how we handle your personal information, please contact us at info@formax.gr or +30 210 000 0000.",
     notfound_heading: "404",
     notfound_message: "Page not found.",
     notfound_link: "Return home",
@@ -110,7 +141,9 @@ export const translations = {
     about_values_heading: "Οι Αξίες μας",
     about_certifications_heading: "Πιστοποιήσεις",
     projects_heading: "Έργα",
+    projects_loading: "Φόρτωση έργων",
     filter_all: "Όλα",
+    project_detail_loading: "Φόρτωση έργου",
     project_status_completed: "Ολοκληρωμένο",
     project_status_inprogress: "Σε Εξέλιξη",
     project_meta_category: "Κατηγορία",
@@ -147,6 +180,35 @@ export const translations = {
     footer_careers_prompt: "Θέλετε να εργαστείτε μαζί μας;",
     footer_careers_cta: "Επικοινωνήστε μαζί μας",
     footer_rights: "Με επιφύλαξη παντός δικαιώματος.",
+    footer_privacy_link: "Πολιτική Απορρήτου",
+    privacy_page_title: "Πολιτική Απορρήτου",
+    privacy_last_updated: "Τελευταία ενημέρωση: 20 Ιουλίου 2026",
+    privacy_intro:
+      "Η FORMAX («εμείς», «εμάς» ή «μας») σέβεται το απόρρητό σας και δεσμεύεται να προστατεύει τα προσωπικά δεδομένα που μοιράζεστε μαζί μας. Η παρούσα Πολιτική Απορρήτου εξηγεί ποιες πληροφορίες συλλέγουμε, πώς τις χρησιμοποιούμε και ποιες επιλογές έχετε σχετικά με τα δεδομένα σας όταν επισκέπτεστε τον ιστότοπό μας ή επικοινωνείτε μαζί μας για κάποιο έργο.",
+    privacy_section_collect_heading: "Πληροφορίες που Συλλέγουμε",
+    privacy_section_collect_body:
+      "Ενδέχεται να συλλέγουμε πληροφορίες που μας παρέχετε απευθείας, όπως το όνομά σας, τη διεύθυνση email, τον αριθμό τηλεφώνου και οποιαδήποτε στοιχεία συμπεριλαμβάνετε σε φόρμα επικοινωνίας ή αίτησης καριέρας. Ενδέχεται επίσης να συλλέγουμε αυτόματα ορισμένα τεχνικά στοιχεία, όπως τη διεύθυνση IP, τον τύπο του προγράμματος περιήγησης και τις σελίδες που επισκεφθήκατε, μέσω τυπικών αρχείων καταγραφής διακομιστή και cookies.",
+    privacy_section_use_heading: "Πώς Χρησιμοποιούμε τις Πληροφορίες σας",
+    privacy_section_use_body:
+      "Χρησιμοποιούμε τις πληροφορίες που συλλέγουμε για να απαντάμε στα ερωτήματά σας, να αξιολογούμε αιτήσεις εργασίας, να βελτιώνουμε τον ιστότοπο και τις υπηρεσίες μας, και να επικοινωνούμε μαζί σας σχετικά με έργα ή ευκαιρίες για τις οποίες έχετε εκδηλώσει ενδιαφέρον. Δεν πωλούμε τα προσωπικά σας δεδομένα σε τρίτους.",
+    privacy_section_cookies_heading: "Cookies & Παρόμοιες Τεχνολογίες",
+    privacy_section_cookies_body:
+      "Ο ιστότοπός μας ενδέχεται να χρησιμοποιεί cookies και παρόμοιες τεχνολογίες για να θυμάται τις προτιμήσεις σας, όπως τη γλώσσα και το θέμα εμφάνισης που έχετε επιλέξει, καθώς και για να κατανοούμε πώς οι επισκέπτες χρησιμοποιούν τον ιστότοπό μας. Μπορείτε να ελέγξετε ή να απενεργοποιήσετε τα cookies μέσω των ρυθμίσεων του προγράμματος περιήγησής σας, αν και ορισμένες λειτουργίες του ιστότοπου ενδέχεται να μη λειτουργούν σωστά χωρίς αυτά.",
+    privacy_section_sharing_heading: "Πώς Μοιραζόμαστε Πληροφορίες",
+    privacy_section_sharing_body:
+      "Δεν μοιραζόμαστε τα προσωπικά σας δεδομένα με τρίτους, παρά μόνο όπου είναι απαραίτητο για την παροχή των υπηρεσιών μας (για παράδειγμα, με παρόχους υπηρεσιών που μας βοηθούν να λειτουργούμε τον ιστότοπο), για τη συμμόρφωση με νομικές υποχρεώσεις, ή με τη συγκατάθεσή σας.",
+    privacy_section_security_heading: "Διατήρηση & Ασφάλεια Δεδομένων",
+    privacy_section_security_body:
+      "Διατηρούμε τα προσωπικά δεδομένα μόνο για όσο διάστημα είναι απαραίτητο για την εκπλήρωση των σκοπών που περιγράφονται στην παρούσα πολιτική, ή όπως απαιτείται από τον νόμο. Λαμβάνουμε εύλογα τεχνικά και οργανωτικά μέτρα για την προστασία των πληροφοριών σας από μη εξουσιοδοτημένη πρόσβαση, απώλεια ή κατάχρηση.",
+    privacy_section_rights_heading: "Τα Δικαιώματά σας",
+    privacy_section_rights_body:
+      "Ανάλογα με την τοποθεσία σας, ενδέχεται να έχετε το δικαίωμα πρόσβασης, διόρθωσης ή διαγραφής των προσωπικών σας δεδομένων, καθώς και το δικαίωμα αντίρρησης ή περιορισμού ορισμένων επεξεργασιών. Για να ασκήσετε οποιοδήποτε από αυτά τα δικαιώματα, επικοινωνήστε μαζί μας στα στοιχεία παρακάτω.",
+    privacy_section_changes_heading: "Αλλαγές στην Παρούσα Πολιτική",
+    privacy_section_changes_body:
+      "Ενδέχεται να ενημερώνουμε την παρούσα Πολιτική Απορρήτου κατά καιρούς, ώστε να αντικατοπτρίζει αλλαγές στις πρακτικές μας ή για άλλους λειτουργικούς, νομικούς ή κανονιστικούς λόγους. Σας ενθαρρύνουμε να επισκέπτεστε περιοδικά αυτή τη σελίδα για τις πιο πρόσφατες πληροφορίες.",
+    privacy_section_contact_heading: "Επικοινωνία",
+    privacy_section_contact_body:
+      "Εάν έχετε οποιεσδήποτε ερωτήσεις σχετικά με την παρούσα Πολιτική Απορρήτου ή τον τρόπο που διαχειριζόμαστε τα προσωπικά σας δεδομένα, επικοινωνήστε μαζί μας στο info@formax.gr ή στο +30 210 000 0000.",
     notfound_heading: "404",
     notfound_message: "Η σελίδα δεν βρέθηκε.",
     notfound_link: "Επιστροφή στην αρχική",

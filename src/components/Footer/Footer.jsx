@@ -53,6 +53,9 @@ export default function Footer() {
         <p>
           &copy; {new Date().getFullYear()} FORMAX. {t("footer_rights")}
         </p>
+        <Link to="/privacy-policy" className="footer-privacy-link">
+          {t("footer_privacy_link")}
+        </Link>
       </div>
 
       <div className="footer-utilities">

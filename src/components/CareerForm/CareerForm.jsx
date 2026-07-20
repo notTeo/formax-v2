@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { positions } from "../../data/positions";
 import { stripAccents } from "../../utils/text";
+import Loader from "../Loader/Loader";
 import "./CareerForm.css";
 
 const initialState = {
@@ -120,7 +121,7 @@ export default function CareerForm() {
       />
 
       <button type="submit" className="btn-primary" disabled={status === "loading"}>
-        {status === "loading" ? t("form_submitting") : t("form_submit")}
+        {status === "loading" ? <Loader size={18} label={t("form_submitting")} /> : t("form_submit")}
       </button>
 
       {status === "success" && <p className="form-message success">{t("form_success")}</p>}

@@ -1,0 +1,84 @@
+.loader {
+  fill: currentColor;
+  color: var(--color-text);
+  flex-shrink: 0;
+}
+
+.loader-bar {
+  opacity: 0;
+  animation-duration: 3.0s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.loader-bar-1 {
+  animation-name: loader-pulse-1;
+}
+
+.loader-bar-2 {
+  animation-name: loader-pulse-2;
+}
+
+.loader-bar-3 {
+  animation-name: loader-pulse-3;
+}
+
+/* Each bar appears in order 1, 2, 3 - then disappears in the same order 1, 2, 3. */
+
+@keyframes loader-pulse-1 {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  9% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  59% {
+    opacity: 0;
+  }
+}
+
+@keyframes loader-pulse-2 {
+  0%,
+  16.6%,
+  100% {
+    opacity: 0;
+  }
+  25.6% {
+    opacity: 1;
+  }
+  66.6% {
+    opacity: 1;
+  }
+  75.6% {
+    opacity: 0;
+  }
+}
+
+@keyframes loader-pulse-3 {
+  0%,
+  33.3%,
+  100% {
+    opacity: 0;
+  }
+  42.3% {
+    opacity: 1;
+  }
+  83.3% {
+    opacity: 1;
+  }
+  92.3% {
+    opacity: 0;
+  }
+}
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-block: var(--space-3xl);
+}

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import Reveal from "../../components/Reveal/Reveal";
 
@@ -11,9 +12,9 @@ export default function CTABanner() {
         {t("cta_subheading")}
       </Reveal>
       <Reveal delay={160}>
-        <button type="button" className="btn-primary">
+        <Link to="/contact" className="btn-primary">
           {t("cta_button")}
-        </button>
+        </Link>
       </Reveal>
     </section>
   );

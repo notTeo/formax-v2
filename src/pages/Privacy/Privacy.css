@@ -1,0 +1,32 @@
+.page-privacy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 720px;
+  margin-inline: auto;
+  padding-inline: var(--page-padding);
+  padding-block: var(--space-xl) var(--space-3xl);
+}
+
+.privacy-updated {
+  font-size: var(--fs-label);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-muted);
+}
+
+.privacy-intro {
+  font-size: var(--fs-body);
+}
+
+.privacy-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.privacy-section h2 {
+  font-size: var(--fs-h3);
+}
