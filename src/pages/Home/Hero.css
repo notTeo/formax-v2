@@ -65,7 +65,7 @@
   width: calc(100% + 2 * var(--page-padding));
   margin-inline: calc(-1 * var(--page-padding));
   /* margin-top: var(--space-2xl); */
-  aspect-ratio: 7 / 2;
+  aspect-ratio: 14 / 5;
   background: var(--color-surface);
   border-radius: var(--radius-none);
   overflow: hidden;
@@ -73,7 +73,7 @@
 
 @media (max-width: 768px) {
   .hero-image {
-    aspect-ratio: 3 / 1;
+    aspect-ratio: 12 / 5;
   }
 }
 
