@@ -5,7 +5,6 @@ import Reveal from "../../components/Reveal/Reveal";
 import photo1 from "../../assets/photos/abbe-sublett-nxZDMUQhN4o-unsplash.jpg";
 import photo2 from "../../assets/photos/kenrick-baksh-Wm8opOd-MDE-unsplash.jpg";
 import photo3 from "../../assets/photos/lei-jiang-csPvbh_E1uc-unsplash.jpg";
-import photo4 from "../../assets/photos/nick-wessaert-A2DibrM7wqo-unsplash.jpg";
 import photo5 from "../../assets/photos/nick-wessaert-JI01fn0U7Cg-unsplash.jpg";
 import "./FeaturedProjects.css";
 
@@ -13,7 +12,6 @@ const galleryImages = [
   { src: photo1, size: "lg", position: "top-left" },
   { src: photo2, size: "md", position: "top-right" },
   { src: photo3, size: "md", position: "bottom-left" },
-  { src: photo4, size: "lg", position: "bottom-right" },
   { src: photo5, size: "sm", position: "mid-right" },
 ];
 

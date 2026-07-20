@@ -1,9 +1,12 @@
 :root {
+  color-scheme: light;
+
   --color-bg: #ffffff;
   --color-text: #0a0a0a;
   --color-text-muted: #666666;
   --color-accent: #c9cde8;
   --color-border: #e5e5e5;
+  --color-surface: #f2f2f3;
 
   --font-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
@@ -41,4 +44,15 @@
 
   --radius-pill: 999px;
   --radius-none: 0;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-bg: #0a0a0b;
+  --color-text: #f2f2f2;
+  --color-text-muted: #9a9a9a;
+  --color-accent: #3a3f66;
+  --color-border: #262626;
+  --color-surface: #1c1c1e;
 }

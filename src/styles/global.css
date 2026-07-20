@@ -16,6 +16,16 @@ body {
   color: var(--color-text);
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+[data-theme="dark"] .navbar-center-logo-wordmark,
+[data-theme="dark"] .navbar-mobile-icon img,
+[data-theme="dark"] .hero-logo-big,
+[data-theme="dark"] .footer-logo {
+  filter: invert(1);
 }
 
 #root {
@@ -126,7 +136,7 @@ select:focus {
 
 .btn-primary:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 0 4px rgba(201, 205, 232, 0.45);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 65%, transparent);
 }
 
 .btn-primary:hover::before {

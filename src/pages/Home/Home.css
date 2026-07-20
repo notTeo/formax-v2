@@ -26,6 +26,13 @@
   gap: 1rem;
 }
 
+@media (max-width: 768px) {
+  .service-teaser-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+
 .service-teaser-card {
   position: relative;
   aspect-ratio: 3 / 4;

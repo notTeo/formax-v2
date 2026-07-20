@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useTheme } from "../../context/ThemeContext";
 import "./ThemeToggle.css";
 
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark";
 
   return (
     <button
@@ -10,7 +11,7 @@ export default function ThemeToggle() {
       className="theme-toggle btn-ghost"
       aria-pressed={isDark}
       aria-label="Toggle theme"
-      onClick={() => setIsDark((prev) => !prev)}
+      onClick={toggleTheme}
     >
       {isDark ? (
         <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
