@@ -97,11 +97,11 @@ export default function Navbar() {
       </nav>
 
       <div className="navbar-right">
+        <LanguageToggle />
+        <ThemeToggle />
         <Link to={contactLink.to} className="btn-primary navbar-contact-btn">
           {stripAccents(t(contactLink.key))}
         </Link>
-        <LanguageToggle />
-        <ThemeToggle />
       </div>
 
       <button
