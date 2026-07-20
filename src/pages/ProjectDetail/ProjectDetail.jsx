@@ -11,7 +11,7 @@ const LOADING_DELAY_MS = 1200;
 
 export default function ProjectDetail() {
   const { slug } = useParams();
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const project = projects.find((item) => item.slug === slug);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -37,14 +37,14 @@ export default function ProjectDetail() {
     <div className="page-project-detail">
       <div className="project-detail-hero">{/* PLACEHOLDER: {project.coverImage} */}</div>
 
-      <Reveal as="h1">{project.title}</Reveal>
+      <Reveal as="h1">{project.title[lang]}</Reveal>
 
       <dl className="project-detail-meta">
         <dt>{stripAccents(t("project_meta_category"))}</dt>
-        <dd>{project.category}</dd>
+        <dd>{t(`sector_${project.category.toLowerCase()}`)}</dd>
 
         <dt>{stripAccents(t("project_meta_location"))}</dt>
-        <dd>{project.location}</dd>
+        <dd>{project.location[lang]}</dd>
 
         <dt>{stripAccents(t("project_meta_area"))}</dt>
         <dd>{project.area_sqm}</dd>
@@ -69,7 +69,7 @@ export default function ProjectDetail() {
         ))}
       </div>
 
-      <p className="project-detail-description">{project.description}</p>
+      <p className="project-detail-description">{project.description[lang]}</p>
     </div>
   );
 }

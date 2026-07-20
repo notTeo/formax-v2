@@ -13,7 +13,7 @@ const initialState = {
 };
 
 export default function CareerForm() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const [formData, setFormData] = useState(initialState);
   const [cvFile, setCvFile] = useState(null);
   const [errors, setErrors] = useState({});
@@ -96,7 +96,7 @@ export default function CareerForm() {
       <select id="position" name="position" value={formData.position} onChange={handleChange}>
         {positions.map((position) => (
           <option key={position.id} value={position.id}>
-            {position.title}
+            {position.title[lang]}
           </option>
         ))}
       </select>

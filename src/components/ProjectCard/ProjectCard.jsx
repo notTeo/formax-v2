@@ -4,7 +4,7 @@ import { stripAccents } from "../../utils/text";
 import "./ProjectCard.css";
 
 export default function ProjectCard({ slug, title, category, status, coverImage }) {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
 
   return (
     <Link to={`/projects/${slug}`} className="project-card">
@@ -12,8 +12,8 @@ export default function ProjectCard({ slug, title, category, status, coverImage 
         {/* PLACEHOLDER IMAGE */}
       </div>
       <div className="project-card-body">
-        <h3>{title}</h3>
-        <p>{category}</p>
+        <h3>{title[lang]}</h3>
+        <p>{t(`sector_${category.toLowerCase()}`)}</p>
         <span className="project-card-status">
           {stripAccents(status === "Completed" ? t("project_status_completed") : t("project_status_inprogress"))}
         </span>

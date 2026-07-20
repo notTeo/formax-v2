@@ -6,7 +6,7 @@ const STORAGE_KEY = "formax-lang";
 
 function getInitialLang() {
   const stored = window.localStorage.getItem(STORAGE_KEY);
-  return stored === "en" || stored === "el" ? stored : "el";
+  return stored === "en" || stored === "el" ? stored : "en";
 }
 
 export function LanguageProvider({ children }) {

@@ -27,11 +27,11 @@ export default function Projects() {
 
   const filterCategories = [
     { value: "All", label: t("filter_all") },
-    { value: "Healthcare", label: "Healthcare" },
-    { value: "Offices", label: "Offices" },
-    { value: "Retail", label: "Retail" },
-    { value: "Residential", label: "Residential" },
-    { value: "Hospitality", label: "Hospitality" },
+    { value: "Healthcare", label: t("sector_healthcare") },
+    { value: "Offices", label: t("sector_offices") },
+    { value: "Retail", label: t("sector_retail") },
+    { value: "Residential", label: t("sector_residential") },
+    { value: "Hospitality", label: t("sector_hospitality") },
   ];
 
   const filteredProjects = useMemo(() => {
