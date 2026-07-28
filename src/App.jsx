@@ -11,8 +11,13 @@ import Careers from "./pages/Careers/Careers";
 import Contact from "./pages/Contact/Contact";
 import Privacy from "./pages/Privacy/Privacy";
 import NotFound from "./pages/NotFound/NotFound";
+import ComingSoon from "./pages/ComingSoon/ComingSoon";
 
 export default function App() {
+  if (import.meta.env.VITE_COMING_SOON === "true") {
+    return <ComingSoon />;
+  }
+
   return (
     <>
       <ScrollToTop />

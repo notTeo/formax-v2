@@ -24,7 +24,8 @@ body {
 [data-theme="dark"] .navbar-center-logo-wordmark,
 [data-theme="dark"] .navbar-sidebar-logo img,
 [data-theme="dark"] .hero-logo-big,
-[data-theme="dark"] .footer-logo {
+[data-theme="dark"] .footer-logo,
+[data-theme="dark"] .coming-soon-logo {
   filter: invert(1);
 }
 

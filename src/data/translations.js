@@ -112,6 +112,10 @@ export const translations = {
     notfound_heading: "404",
     notfound_message: "Page not found.",
     notfound_link: "Return home",
+    coming_soon_badge: "Launching soon",
+    coming_soon_heading: "Coming Soon",
+    coming_soon_message:
+      "We're building something new. Our website will be live shortly.",
   },
   el: {
     nav_home: "Αρχική",
@@ -226,5 +230,9 @@ export const translations = {
     notfound_heading: "404",
     notfound_message: "Η σελίδα δεν βρέθηκε.",
     notfound_link: "Επιστροφή στην αρχική",
+    coming_soon_badge: "Έρχεται σύντομα",
+    coming_soon_heading: "Σύντομα Κοντά σας",
+    coming_soon_message:
+      "Ετοιμάζουμε κάτι καινούργιο. Ο ιστότοπός μας θα είναι σύντομα διαθέσιμος.",
   },
 };
