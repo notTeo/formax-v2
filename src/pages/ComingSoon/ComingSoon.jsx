@@ -2,7 +2,7 @@ import { useTheme } from "../../context/ThemeContext";
 import { useLanguage } from "../../context/LanguageContext";
 import ThemeToggle from "../../components/ThemeToggle/ThemeToggle";
 import LanguageToggle from "../../components/LanguageToggle/LanguageToggle";
-import logo from "../../assets/FORMAX-letters-only.svg";
+import logo from "../../assets/FORMAX-combined.svg";
 import heroPhotoLight from "../../assets/photos/hero/hero-light.jpg";
 import heroPhotoDark from "../../assets/photos/hero/hero-dark.jpg";
 import "./ComingSoon.css";
