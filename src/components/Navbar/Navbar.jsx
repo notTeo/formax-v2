@@ -6,7 +6,7 @@ import LanguageToggle from "../LanguageToggle/LanguageToggle";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import wordmark from "../../assets/FORMAX-letters-only.svg";
 import fullLogo from "../../assets/FORMAX-combined.svg";
-import "./Navbar.css";
+import "./Navbar.css"; 
 
 const links = [
   { to: "/about", key: "nav_about" },
