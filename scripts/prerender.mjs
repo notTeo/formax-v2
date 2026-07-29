@@ -5,8 +5,31 @@ import http from "node:http";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import puppeteer from "puppeteer";
 import { projects } from "../src/data/projects.js";
+
+// Vercel's build image is missing several shared libraries (libnspr4.so and friends) that
+// Puppeteer's own bundled Chrome needs, so on Vercel we launch @sparticuz/chromium (a Chromium
+// build made for exactly this kind of minimal serverless/build environment) via puppeteer-core
+// instead. Locally (e.g. this Mac) that binary isn't available for the platform, so we fall back
+// to the regular `puppeteer` package, which already bundles a working Chrome for macOS.
+async function launchBrowser() {
+  if (process.env.VERCEL) {
+    const { default: chromium } = await import("@sparticuz/chromium");
+    const { default: puppeteerCore } = await import("puppeteer-core");
+    return puppeteerCore.launch({
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath(),
+      headless: chromium.headless,
+    });
+  }
+
+  const { default: puppeteer } = await import("puppeteer");
+  return puppeteer.launch({
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
+}
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, "..", "dist");
@@ -71,10 +94,7 @@ async function main() {
   const server = await startServer(shellHtml);
   const port = server.address().port;
 
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  });
+  const browser = await launchBrowser();
 
   const captured = new Map();
 
