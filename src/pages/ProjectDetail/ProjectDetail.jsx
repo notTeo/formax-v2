@@ -5,6 +5,8 @@ import { projects } from "../../data/projects";
 import { stripAccents } from "../../utils/text";
 import Reveal from "../../components/Reveal/Reveal";
 import Loader from "../../components/Loader/Loader";
+import Seo from "../../components/Seo/Seo";
+import { pageSeo, projectSeo } from "../../data/seo";
 import "./ProjectDetail.css";
 
 const LOADING_DELAY_MS = 1200;
@@ -21,9 +23,12 @@ export default function ProjectDetail() {
     return () => clearTimeout(timer);
   }, [slug]);
 
+  const seo = project ? projectSeo(project) : pageSeo.notFound;
+
   if (isLoading) {
     return (
       <div className="loader-container">
+        <Seo title={seo.title} description={seo.description} noindex={seo.noindex} />
         <Loader size={56} label={t("project_detail_loading")} />
       </div>
     );
@@ -35,6 +40,7 @@ export default function ProjectDetail() {
 
   return (
     <div className="page-project-detail">
+      <Seo title={seo.title} description={seo.description} />
       <div className="project-detail-hero">{/* PLACEHOLDER: {project.coverImage} */}</div>
 
       <Reveal as="h1">{project.title[lang]}</Reveal>

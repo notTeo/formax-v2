@@ -2,6 +2,8 @@ import { useTheme } from "../../context/ThemeContext";
 import { useLanguage } from "../../context/LanguageContext";
 import ThemeToggle from "../../components/ThemeToggle/ThemeToggle";
 import LanguageToggle from "../../components/LanguageToggle/LanguageToggle";
+import Seo from "../../components/Seo/Seo";
+import { pageSeo } from "../../data/seo";
 import logo from "../../assets/FORMAX-combined.svg";
 import heroPhotoLight from "../../assets/photos/hero/hero-light.jpg";
 import heroPhotoDark from "../../assets/photos/hero/hero-dark.jpg";
@@ -13,6 +15,7 @@ export default function ComingSoon() {
 
   return (
     <div className="page-coming-soon">
+      <Seo title={pageSeo.comingSoon.title} description={pageSeo.comingSoon.description} />
       <img
         key={theme}
         src={theme === "dark" ? heroPhotoDark : heroPhotoLight}

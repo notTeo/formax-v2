@@ -1,5 +1,7 @@
 import { useLanguage } from "../../context/LanguageContext";
 import Reveal from "../../components/Reveal/Reveal";
+import Seo from "../../components/Seo/Seo";
+import { pageSeo } from "../../data/seo";
 import "./Privacy.css";
 
 const sections = [
@@ -18,6 +20,7 @@ export default function Privacy() {
 
   return (
     <div className="page-privacy">
+      <Seo title={pageSeo.privacy.title} description={pageSeo.privacy.description} />
       <Reveal as="h1">{t("privacy_page_title")}</Reveal>
       <p className="privacy-updated">{t("privacy_last_updated")}</p>
       <Reveal as="p" className="privacy-intro" delay={80}>

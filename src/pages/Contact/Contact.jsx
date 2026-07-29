@@ -1,6 +1,8 @@
 import { useLanguage } from "../../context/LanguageContext";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import Reveal from "../../components/Reveal/Reveal";
+import Seo from "../../components/Seo/Seo";
+import { pageSeo } from "../../data/seo";
 import "./Contact.css";
 
 export default function Contact() {
@@ -8,6 +10,7 @@ export default function Contact() {
 
   return (
     <div className="page-contact">
+      <Seo title={pageSeo.contact.title} description={pageSeo.contact.description} />
       <Reveal as="h1">{t("contact_heading")}</Reveal>
 
       <section className="contact-info">

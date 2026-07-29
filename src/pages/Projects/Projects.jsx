@@ -6,6 +6,8 @@ import FilterBar from "../../components/FilterBar/FilterBar";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import Reveal from "../../components/Reveal/Reveal";
 import Loader from "../../components/Loader/Loader";
+import Seo from "../../components/Seo/Seo";
+import { pageSeo } from "../../data/seo";
 import "./Projects.css";
 
 const validCategories = ["Healthcare", "Offices", "Retail", "Residential", "Hospitality"];
@@ -41,6 +43,7 @@ export default function Projects() {
 
   return (
     <div className="page-projects">
+      <Seo title={pageSeo.projects.title} description={pageSeo.projects.description} />
       <Reveal as="h1">{t("projects_heading")}</Reveal>
       <FilterBar categories={filterCategories} activeFilter={activeFilter} onFilterChange={setActiveFilter} />
       {isLoading ? (

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="el">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -22,10 +22,38 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>FORMAX</title>
+    <title>FORMAX | Κατασκευαστική Εταιρεία Αθήνα</title>
+    <!-- seo-fallback: static defaults for crawlers that don't run JS, and a safety net if the
+         prerender build step is ever skipped. react-helmet-async replaces the <title> text above
+         in place, but only appends its own tags below rather than removing these — so the
+         prerender script strips everything between these two markers once it has captured each
+         route's real Helmet-rendered <head>, to avoid duplicate/stale meta tags in production. -->
+    <meta
+      name="description"
+      content="FORMAX κατασκευές: αναλαμβάνουμε έργα υγείας, γραφείων, καταστημάτων, κατοικιών και φιλοξενίας στην Αθήνα, από τον σχεδιασμό έως την παράδοση."
+    />
+    <link rel="canonical" href="https://formax.group/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="FORMAX" />
+    <meta property="og:url" content="https://formax.group/" />
+    <meta property="og:title" content="FORMAX | Κατασκευαστική Εταιρεία Αθήνα" />
+    <meta
+      property="og:description"
+      content="FORMAX κατασκευές: αναλαμβάνουμε έργα υγείας, γραφείων, καταστημάτων, κατοικιών και φιλοξενίας στην Αθήνα, από τον σχεδιασμό έως την παράδοση."
+    />
+    <meta property="og:image" content="https://formax.group/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- /seo-fallback -->
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <h1>FORMAX &mdash; Κατασκευαστική Εταιρεία στην Αθήνα</h1>
+      <p>
+        Η FORMAX είναι κατασκευαστική εταιρεία με έδρα την Αθήνα, εξειδικευμένη στις κατασκευές FORMAX
+        για έργα υγείας, γραφείων, καταστημάτων, κατοικιών και φιλοξενίας, από τον σχεδιασμό έως την
+        παράδοση.
+      </p>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

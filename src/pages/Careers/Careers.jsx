@@ -3,6 +3,8 @@ import { positions } from "../../data/positions";
 import PositionsList from "./PositionsList";
 import CareerForm from "../../components/CareerForm/CareerForm";
 import Reveal from "../../components/Reveal/Reveal";
+import Seo from "../../components/Seo/Seo";
+import { pageSeo } from "../../data/seo";
 import "./Careers.css";
 
 export default function Careers() {
@@ -10,6 +12,7 @@ export default function Careers() {
 
   return (
     <div className="page-careers">
+      <Seo title={pageSeo.careers.title} description={pageSeo.careers.description} />
       <Reveal as="h1">{t("careers_heading")}</Reveal>
 
       <section>

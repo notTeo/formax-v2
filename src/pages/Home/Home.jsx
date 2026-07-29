@@ -3,7 +3,9 @@ import ServiceTeaser from "./ServiceTeaser";
 import FeaturedProjects from "./FeaturedProjects";
 import CTABanner from "./CTABanner";
 import StatCounter from "../../components/StatCounter/StatCounter";
+import Seo from "../../components/Seo/Seo";
 import { stats } from "../../data/stats";
+import { pageSeo } from "../../data/seo";
 import { useLanguage } from "../../context/LanguageContext";
 import "./Home.css";
 
@@ -12,6 +14,7 @@ export default function Home() {
 
   return (
     <div className="page-home">
+      <Seo title={pageSeo.home.title} description={pageSeo.home.description} />
       <Hero />
 
       <section className="stats-section">
