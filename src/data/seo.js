@@ -3,56 +3,56 @@ export const SITE_URL = "https://formax.group";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 const DEFAULT_DESCRIPTION =
-  "FORMAX κατασκευές: αναλαμβάνουμε έργα υγείας, γραφείων, καταστημάτων, κατοικιών και φιλοξενίας στην Αθήνα, από τον σχεδιασμό έως την παράδοση.";
+  "FORMAX construction company: we deliver healthcare, office, retail, residential, and hospitality projects in Athens, from design to handover.";
 
 export const pageSeo = {
   comingSoon: {
-    title: "FORMAX | Κατασκευαστική Εταιρεία Αθήνα",
+    title: "FORMAX | Construction Company Athens",
     description: DEFAULT_DESCRIPTION,
   },
   home: {
-    title: "FORMAX | Κατασκευαστική Εταιρεία Αθήνα",
+    title: "FORMAX | Construction Company Athens",
     description: DEFAULT_DESCRIPTION,
   },
   about: {
-    title: "Σχετικά με Εμάς | FORMAX Κατασκευές Αθήνα",
+    title: "About Us | FORMAX Construction Company Athens",
     description:
-      "Γνωρίστε τη FORMAX, μια κατασκευαστική εταιρεία στην Αθήνα με έμπειρη ομάδα μηχανικών και πιστοποιήσεις ποιότητας στις κατασκευές formax κάθε κλίμακας.",
+      "Meet FORMAX, a construction company in Athens with an experienced engineering team and quality certifications across projects of every scale.",
   },
   projects: {
-    title: "Έργα | FORMAX Κατασκευές Αθήνα",
+    title: "Projects | FORMAX Construction Company Athens",
     description:
-      "Δείτε ενδεικτικά έργα από τις κατασκευές formax σε τομείς υγείας, γραφείων, retail, κατοικιών και φιλοξενίας σε όλη την Ελλάδα.",
+      "Browse projects by FORMAX construction company across healthcare, offices, retail, residential, and hospitality sectors in Greece.",
   },
   careers: {
-    title: "Καριέρα | FORMAX Κατασκευές Αθήνα",
+    title: "Careers | FORMAX Construction Company Athens",
     description:
-      "Ανοιχτές θέσεις εργασίας στη FORMAX — γίνετε μέλος της ομάδας που υλοποιεί τις κατασκευές formax στην Αθήνα και σε όλη τη χώρα.",
+      "Open positions at FORMAX — join the team behind FORMAX construction company projects in Athens and across Greece.",
   },
   contact: {
-    title: "Επικοινωνία | FORMAX Κατασκευές Αθήνα",
+    title: "Contact | FORMAX Construction Company Athens",
     description:
-      "Επικοινωνήστε με τη FORMAX για το επόμενο κατασκευαστικό σας έργο στην Αθήνα — τηλέφωνο, email και διεύθυνση γραφείων.",
+      "Get in touch with FORMAX construction company for your next building project in Athens — phone, email, and office address.",
   },
   privacy: {
-    title: "Πολιτική Απορρήτου | FORMAX",
+    title: "Privacy Policy | FORMAX",
     description:
-      "Πολιτική απορρήτου της FORMAX σχετικά με τη συλλογή και επεξεργασία προσωπικών δεδομένων.",
+      "FORMAX's privacy policy on the collection and processing of personal data.",
   },
   notFound: {
-    title: "Η σελίδα δεν βρέθηκε | FORMAX",
-    description: "Η σελίδα που αναζητήσατε δεν υπάρχει ή έχει μετακινηθεί.",
+    title: "Page Not Found | FORMAX",
+    description: "The page you were looking for doesn't exist or has moved.",
     noindex: true,
   },
 };
 
 export function projectSeo(project) {
-  const title = project.title?.el ?? project.title?.en ?? "";
+  const title = project.title?.en ?? project.title?.el ?? "";
   return {
-    title: `${title} | FORMAX Κατασκευές Αθήνα`,
+    title: `${title} | FORMAX Construction Company Athens`,
     description:
-      project.description?.el ??
       project.description?.en ??
+      project.description?.el ??
       DEFAULT_DESCRIPTION,
   };
 }

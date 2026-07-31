@@ -101,11 +101,12 @@ async function main() {
   for (const route of ROUTES) {
     const page = await browser.newPage();
     try {
-      // Force the Greek locale for this isolated headless snapshot only — real visitors keep
-      // whatever language they land on / pick via the toggle, this never touches their browser.
+      // Force the English locale for this isolated headless snapshot only (the site defaults to
+      // English) — real visitors keep whatever language they land on / pick via the toggle, this
+      // never touches their browser.
       await page.evaluateOnNewDocument(() => {
         try {
-          window.localStorage.setItem("formax-lang", "el");
+          window.localStorage.setItem("formax-lang", "en");
         } catch {
           /* ignore */
         }
