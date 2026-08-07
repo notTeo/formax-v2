@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="66 52 28 33">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 48 48">
   <defs>
     <style>
-      .st1 {
-        fill: #0a0a0a;
+      .bg { fill: #ffffff; }
+      .icon { fill: #0a0a0a; }
+      @media (prefers-color-scheme: dark) {
+        .bg { fill: #0a0a0a; }
+        .icon { fill: #ffffff; }
       }
     </style>
   </defs>
-  <g id="Layer_1">
-    <g>
-      <polygon class="st1" points="68.01 82.97 72.75 82.97 72.75 54.3 68.01 57.26 68.01 82.97"/>
-      <polygon class="st1" points="77.1 56.29 77.1 63.11 91.99 69.99 91.99 63.14 77.1 56.29"/>
-      <polygon class="st1" points="77.1 69.24 77.1 76.09 91.99 82.97 91.99 76.11 77.1 69.24"/>
-    </g>
+  <rect class="bg" x="0" y="0" width="48" height="48" rx="10" />
+  <g transform="translate(-59.712,-47.818) scale(1.0464)">
+    <polygon class="icon" points="68.01 82.97 72.75 82.97 72.75 54.3 68.01 57.26 68.01 82.97"/>
+    <polygon class="icon" points="77.1 56.29 77.1 63.11 91.99 69.99 91.99 63.14 77.1 56.29"/>
+    <polygon class="icon" points="77.1 69.24 77.1 76.09 91.99 82.97 91.99 76.11 77.1 69.24"/>
   </g>
 </svg>
